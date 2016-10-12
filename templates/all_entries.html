@@ -1,0 +1,19 @@
+      {% extends "layout.html" %}
+      {% block body %}
+      <div class="entries_container">
+        <h2>Current Entries</h2>
+
+        <ul class="clear">
+          {% for contact in contact_list %}
+            <li>
+              Name: {{contact.name}}<br>
+              Email: {{contact.email}}<br>
+              Phone Number: {{contact.cell_number}}
+                <a href="/update_entry?id={{contact.id}}">Update Entry</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+
+      {% endblock %}

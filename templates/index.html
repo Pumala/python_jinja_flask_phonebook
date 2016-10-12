@@ -1,0 +1,23 @@
+      {% extends "layout.html" %}
+      {% block body %}
+      <div class="container">
+        <h2>Add a New Entry</h2>
+        <form action="/submit_new_entry" method="POST">
+          <p>
+            <label for="name">Name</label><br>
+            <input type="text" name="name">
+          </p>
+          <p>
+            <label for="cell_number">Phone Number</label><br>
+            <input type="text" name="cell_number">
+          </p>
+          <p>
+            <label for="email">Email</label><br>
+            <input type="text" name="email">
+          </p>
+          <p>
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+      {% endblock %}

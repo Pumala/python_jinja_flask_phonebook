@@ -1,0 +1,25 @@
+      {% extends "layout.html" %}
+      {% block body %}
+      <div class="container">
+        {% for contact in contact_list: %}
+        <h2>Update Entry {{contact.name}}</h2>
+        <form class="update" action="/submit_updated_entry" method="POST">
+          <input type="hidden" name="id" value="{{contact.id}}">
+          <p>
+            <label for="name">Name</label><br>
+            <input type="text" name="name" value="{{contact.name}}">
+          </p>
+          <p>
+            <label for="cell_number">Phone Number</label><br>
+            <input type="text" name="cell_number" value="{{contact.cell_number}}">
+          </p>
+          <p>
+            <label for="email">Email</label><br>
+            <input type="text" name="email" value="{{contact.email}}">
+          </p>
+          <button type="submit" name="action" value="update">Update Entry</button>
+          <button type="submit" name="action" value="delete">Delete Entry</button>
+        </form>
+      </div>
+      {% endfor %}
+      {% endblock %}
